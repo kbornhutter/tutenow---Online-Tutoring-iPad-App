@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <scenes>
+        <!--Classroom Tab View Controller-->
+        <scene sceneID="P90-x8-dL4">
+            <objects>
+                <tabBarController storyboardIdentifier="classroom" id="6Q6-90-lRJ" customClass="classroomTabViewController" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="l6I-HY-tQA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Q0X-jQ-FhI" kind="relationship" relationship="viewControllers" id="via-S3-Zdk"/>
+                        <segue destination="19I-9y-gWK" kind="relationship" relationship="viewControllers" id="FBb-qe-Xvb"/>
+                        <segue destination="YhG-KP-XCF" kind="relationship" relationship="viewControllers" id="Xv0-KN-H5Z"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xbb-Km-ypg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1712" y="346"/>
+        </scene>
+        <!--Whiteboard-->
+        <scene sceneID="fVV-gh-RL8">
+            <objects>
+                <viewController id="Q0X-jQ-FhI" customClass="whiteboardViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cp3-86-i7Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="Eej-4F-myT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9zy-h6-MA9">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jxH-5r-bsn">
+                                <rect key="frame" x="0.0" y="0.0" width="1035" height="719"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Q0X-jQ-FhI" id="lEN-7w-NNx"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Whiteboard" image="whiteboardico" id="WRx-ha-fEF"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="whiteboardView" destination="jxH-5r-bsn" id="Fve-uY-ZCG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rFX-kG-E0S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2324" y="-623"/>
+        </scene>
+        <!--Finish Lesson-->
+        <scene sceneID="tA9-Sa-mv6">
+            <objects>
+                <viewController id="YhG-KP-XCF" customClass="finishViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JP6-vM-XeN"/>
+                        <viewControllerLayoutGuide type="bottom" id="WcR-G0-eAV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Smz-U8-z6y">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="finishLessonScreen_iPad.png" translatesAutoresizingMaskIntoConstraints="NO" id="uZO-ih-JF9">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This will end the lesson" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeA-b6-cNi">
+                                <rect key="frame" x="405" y="401" width="235" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zf1-nm-M4a">
+                                <rect key="frame" x="247" y="199" width="556" height="370"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="relaseButton:" destination="YhG-KP-XCF" eventType="touchUpInside" id="kUg-jX-B3B"/>
+                                    <action selector="touchDown:" destination="YhG-KP-XCF" eventType="touchDown" id="PL6-Zo-6Gf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Press and hold to Finish Lesson" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FA0-DP-9No">
+                                <rect key="frame" x="349" y="272" width="346" height="165"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="34"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Finish Lesson" image="finishico" id="FT8-HO-Roy"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nfw-oy-Cms" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2176" y="1339"/>
+        </scene>
+        <!--File Upload-->
+        <scene sceneID="9QP-hf-uap">
+            <objects>
+                <viewController id="19I-9y-gWK" customClass="fileViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jJg-wC-2gB"/>
+                        <viewControllerLayoutGuide type="bottom" id="5gQ-cF-bdc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yoj-aN-HD8">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fileUploadScreen_iPad.png" translatesAutoresizingMaskIntoConstraints="NO" id="ojg-FM-AmE">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWs-Ys-6mb">
+                                <rect key="frame" x="315" y="129" width="394" height="301"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectPhoto:" destination="19I-9y-gWK" eventType="touchUpInside" id="7uh-ns-8H3"/>
+                                </connections>
+                            </button>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appicon.png" translatesAutoresizingMaskIntoConstraints="NO" id="xsS-uU-aRg">
+                                <rect key="frame" x="214" y="497" width="118" height="106"/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appicon.png" translatesAutoresizingMaskIntoConstraints="NO" id="osl-Lu-Ms5">
+                                <rect key="frame" x="355" y="497" width="118" height="106"/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appicon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Cl8-hO-ro3">
+                                <rect key="frame" x="563" y="497" width="118" height="106"/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appicon.png" translatesAutoresizingMaskIntoConstraints="NO" id="zsU-XN-c8W">
+                                <rect key="frame" x="706" y="497" width="118" height="106"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yga-u8-69x">
+                                <rect key="frame" x="214" y="497" width="118" height="106"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="s1ButtonPressed:" destination="19I-9y-gWK" eventType="touchUpInside" id="17e-Oh-F2C"/>
+                                    <segue destination="GcT-EZ-eyh" kind="popoverPresentation" popoverAnchorView="Yga-u8-69x" id="tPE-l1-f9J">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGA-6d-9Ut">
+                                <rect key="frame" x="355" y="497" width="118" height="106"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="s2ButtonPressed:" destination="19I-9y-gWK" eventType="touchUpInside" id="ZFz-Ue-sZZ"/>
+                                    <segue destination="GcT-EZ-eyh" kind="popoverPresentation" popoverAnchorView="pGA-6d-9Ut" id="X5x-vX-IaX">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2b-oA-y7L">
+                                <rect key="frame" x="563" y="497" width="118" height="106"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="t1ButtonPressed:" destination="19I-9y-gWK" eventType="touchUpInside" id="EpK-XU-5gi"/>
+                                    <segue destination="GcT-EZ-eyh" kind="popoverPresentation" popoverAnchorView="v2b-oA-y7L" id="5gd-VV-H9Z">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dw3-58-VAM">
+                                <rect key="frame" x="706" y="492" width="118" height="111"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="t2ButtonPressed:" destination="19I-9y-gWK" eventType="touchUpInside" id="SxV-gA-z9Z"/>
+                                    <segue destination="GcT-EZ-eyh" kind="popoverPresentation" popoverAnchorView="Dw3-58-VAM" id="sum-eB-Epx">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="File Upload" image="downloadico" id="2FB-Vq-wV6"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="btnGallery" destination="AWs-Ys-6mb" id="fVs-TU-qeY"/>
+                        <outlet property="studentImage1" destination="xsS-uU-aRg" id="n9d-Y6-ws4"/>
+                        <outlet property="studentImage2" destination="osl-Lu-Ms5" id="Hec-9J-hPZ"/>
+                        <outlet property="tutorImage1" destination="Cl8-hO-ro3" id="wVw-Qh-8K0"/>
+                        <outlet property="tutorImage2" destination="zsU-XN-c8W" id="z1t-zz-tk8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bfM-NO-bCH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3200" y="390"/>
+        </scene>
+        <!--Image Pop Up View Controller-->
+        <scene sceneID="gLX-Q0-V4X">
+            <objects>
+                <viewController id="GcT-EZ-eyh" customClass="imagePopUpViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9l3-Q4-0dw"/>
+                        <viewControllerLayoutGuide type="bottom" id="a5O-3e-goP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="th3-6h-hg4">
+                        <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ctg-Dz-maM">
+                                <rect key="frame" x="-1" y="0.0" width="366" height="419"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appicon.png" translatesAutoresizingMaskIntoConstraints="NO" id="FQi-t7-NxV">
+                                        <rect key="frame" x="-5" y="0.0" width="453" height="447"/>
+                                    </imageView>
+                                </subviews>
+                                <connections>
+                                    <outlet property="delegate" destination="GcT-EZ-eyh" id="TxP-hI-QjE"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="image" destination="FQi-t7-NxV" id="zFA-Ux-zbw"/>
+                        <outlet property="scrollview" destination="ctg-Dz-maM" id="jBw-5O-9J1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vu3-em-889" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4227.5" y="-109"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="welcomescreen" id="BYZ-38-t0r" customClass="welcomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8W-ig-Y3m">
+                                <rect key="frame" x="389" y="451" width="248" height="54"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginAttempt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KV8-vz-7Xh"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="welcomeScreen_iPad.png" translatesAutoresizingMaskIntoConstraints="NO" id="r19-4E-7K6">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="tutenow1234" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="msJ-NK-SlN">
+                                <rect key="frame" x="284" y="385" width="474" height="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="23"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="join"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="797-ch-egu"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="loginButton" destination="p8W-ig-Y3m" id="KeW-Ki-qFo"/>
+                        <outlet property="userName" destination="msJ-NK-SlN" id="tOb-XP-G4K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="appicon.png" width="600" height="600"/>
+        <image name="downloadico" width="64" height="64"/>
+        <image name="fileUploadScreen_iPad.png" width="2048" height="1536"/>
+        <image name="finishLessonScreen_iPad.png" width="2048" height="1536"/>
+        <image name="finishico" width="64" height="68"/>
+        <image name="welcomeScreen_iPad.png" width="2048" height="1536"/>
+        <image name="whiteboardico" width="64" height="59"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="tPE-l1-f9J"/>
+    </inferredMetricsTieBreakers>
+</document>
